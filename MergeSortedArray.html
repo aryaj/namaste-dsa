@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/merge-sorted-array/"
+        target="_blank"
+        >Merge Sorted Array - LeetCode</a
+      >
+    </h1>
+    <script>
+      function main(nums1, m, nums2, n) {
+        // Approach 1 - Extra array
+        /* let nums1Copy = nums1.slice(0, m);
+
+        let p1 = 0;
+        let p2 = 0;
+
+        for (let i = 0; i < m + n; i++) {
+          if (p2 >= n || (p1 < m && nums1Copy[p1] < nums2[p2])) {
+            nums1[i] = nums1Copy[p1];
+            p1++;
+          } else {
+            nums1[i] = nums2[p2];
+            p2++;
+          }
+        } */
+        // Approach 2 - In Place
+        let p1 = m - 1;
+        let p2 = n - 1;
+
+        for (let i = m + n - 1; i >= 0; i--) {
+          if (p2 < 0) {
+            break;
+          }
+
+          if (p1 >= 0 && nums1[p1] > nums2[p2]) {
+            nums1[i] = nums1[p1];
+            p1--;
+          } else {
+            nums1[i] = nums2[p2];
+            p2--;
+          }
+        }
+        return nums1;
+      }
+
+      let nums1 = [1];
+      let m = 1;
+      let nums2 = [];
+      let n = 0;
+
+      console.log(main(nums1, m, nums2, n));
+    </script>
+  </body>
+</html>
