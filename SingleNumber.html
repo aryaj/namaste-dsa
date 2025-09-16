@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/single-number/description/"
+        target="_blank"
+        >Single Number - LeetCode</a
+      >
+    </h1>
+    <script>
+      // Approach 1
+
+      /* function main(nums) {
+        let mapper = {};
+        let singleNumber;
+
+        for (let i = 0; i < nums.length; i++) {
+          mapper[nums[i]] = mapper[nums[i]] ? mapper[nums[i]] + 1 : 1;
+        }
+        console.log(mapper);
+
+        for (const key in mapper) {
+          if (mapper[key] === 1) {
+            singleNumber = key;
+            break;
+          }
+        }
+        return singleNumber;
+      } */
+
+      // Approach 2
+
+      function main(nums) {
+        let xor = 0;
+        for (let i = 0; i < nums.length; i++) {
+          xor = xor ^ nums[i];
+          console.log("xor", xor);
+        }
+        return xor;
+      }
+
+      let nums = [4, 1, 2, 1, 2];
+
+      console.log(main(nums));
+    </script>
+  </body>
+</html>

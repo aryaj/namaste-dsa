@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missing Number</title>
+  </head>
+  <body>
+    <h1>
+      <a href="https://leetcode.com/problems/missing-number/" target="_blank"
+        >Missing Number - LeetCode</a
+      >
+    </h1>
+    <script>
+      function main(nums) {
+        let n = nums.length;
+        let missingNumber;
+
+        let totalLengthSum = (n * (n + 1)) / 2;
+
+        let arraySum = 0;
+
+        for (let i = 0; i < n; i++) {
+          arraySum += nums[i];
+        }
+        missingNumber = totalLengthSum - arraySum;
+        return missingNumber;
+      }
+
+      let nums = [9, 6, 4, 2, 3, 5, 7, 0, 1];
+
+      console.log(main(nums));
+    </script>
+  </body>
+</html>

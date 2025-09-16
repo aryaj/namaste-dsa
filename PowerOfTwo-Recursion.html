@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/power-of-two/description/"
+        target="_blank"
+        >Power of 2 - LeetCode</a
+      >
+    </h1>
+    <script>
+      function main(n) {
+        function isPowerOfTwo(n) {
+          if (n === 1) {
+            return true;
+          }
+          if (n % 2 !== 0 || n < 1) {
+            return false;
+          }
+          return isPowerOfTwo(n / 2);
+        }
+        return isPowerOfTwo(n);
+      }
+
+      let n = 8;
+
+      console.log(main(n));
+    </script>
+  </body>
+</html>

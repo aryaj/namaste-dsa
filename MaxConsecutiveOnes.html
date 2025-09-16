@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/max-consecutive-ones/description/"
+        target="_blank"
+        >Max Consecutive Ones - LeetCode</a
+      >
+    </h1>
+    <script>
+      function main(nums) {
+        let maxCount = 0;
+        let temp = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] === 1) {
+            temp += 1;
+          } else {
+            maxCount = Math.max(maxCount, temp);
+            temp = 0;
+          }
+        }
+        return Math.max(maxCount, temp);
+      }
+
+      let nums = [1, 1, 0, 1, 1, 1];
+
+      console.log(main(nums));
+    </script>
+  </body>
+</html>

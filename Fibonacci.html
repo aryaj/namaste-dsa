@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/fibonacci-number/description/"
+        target="_blank"
+        >Fibonacci - LeetCode</a
+      >
+    </h1>
+    <script>
+      function fibonacci(n) {
+        if (n <= 1) {
+          return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+
+      let n = 0;
+
+      console.log(fibonacci(n));
+    </script>
+  </body>
+</html>
