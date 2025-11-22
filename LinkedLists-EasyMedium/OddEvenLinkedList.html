@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd Even Linked List</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/odd-even-linked-list/"
+        target="_blank"
+        >Odd Even Linked List - LeetCode</a
+      >
+    </h1>
+    <script>
+      var oddEvenList = function (head) {
+        let oddCurr = head;
+        let evenCurr = head.next;
+
+        let evenStart = evenCurr;
+
+        while (oddCurr.next && evenCurr.next) {
+          oddCurr.next = oddCurr.next.next;
+          evenCurr.next = evenCurr.next.next;
+          oddCurr = oddCurr.next;
+          evenCurr = evenCurr.next;
+        }
+
+        oddCurr.next = evenStart;
+        return head;
+      };
+    </script>
+  </body>
+</html>

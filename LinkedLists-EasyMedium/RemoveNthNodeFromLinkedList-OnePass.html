@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Nth Node from Linked List - One Paas</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/"
+        target="_blank"
+        >Remove Nth Node from Linked List - LeetCode</a
+      >
+    </h1>
+    <script>
+      var removeNthFromEnd = function (head, n) {
+        let sentinel = new ListNode();
+        sentinel.next = head;
+        let slow = sentinel;
+        let fast = sentinel;
+        for (let i = 0; i < n; i++) {
+          fast = fast.next;
+        }
+        let prev = slow;
+        while (fast.next) {
+          fast = fast.next;
+          slow = slow.next;
+        }
+        prev = slow;
+        prev.next = prev.next.next;
+        return sentinel.next;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Linked List Element</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/remove-linked-list-elements/"
+        target="_blank"
+        >Remove Linked List Element - LeetCode</a
+      >
+    </h1>
+    <script>
+      var removeElements = function (head, val) {
+        // Create an imaginary node called sentinel just before the head means sentinel.next will be head to track the prev node
+        // deleting a node prev.next = prev.next.next
+        let sentinel = new ListNode();
+        sentinel.next = head;
+
+        let prev = sentinel;
+
+        while (prev && prev.next) {
+          if (prev.next.val === val) {
+            prev.next = prev.next.next;
+          } else {
+            prev = prev.next;
+          }
+        }
+        // As sentinel was imaginary, actual head node will be sentinel.next
+        return sentinel.next;
+      };
+    </script>
+  </body>
+</html>

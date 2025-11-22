@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Middle of the Linked List</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/design-linked-list/"
+        target="_blank"
+        >Middle of the Linked List</a
+      >
+    </h1>
+    <script>
+      function MiddleOfTheLinkedList(head) {
+        let slow = head;
+        let fast = head;
+
+        while (fast !== null && fast.next !== null) {
+          slow = slow.next;
+          fast = fast.next.next;
+        }
+        return slow;
+      }
+
+      //console.log(MiddleOfTheLinkedList(linkedList));
+    </script>
+  </body>
+</html>

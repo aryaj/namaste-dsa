@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a href="" target="_blank">Selection Sort - LeetCode</a>
+    </h1>
+    <script>
+      function main(arr) {
+        let n = arr.length;
+        for (let i = 0; i < n - 1; i++) {
+          let min = i;
+          let isSwapped = false;
+          for (let j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min]) {
+              min = j;
+            }
+          }
+          if (min !== i) {
+            let temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+            isSwapped = true;
+          }
+          if (!isSwapped) {
+            break;
+          }
+        }
+        return arr;
+      }
+
+      //let arr = [5, 4, 9, 1, 0];
+      let arr = [0, 1, 4, 5, 9];
+
+      console.log(main(arr));
+    </script>
+  </body>
+</html>

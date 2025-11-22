@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrom Linked List</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/palindrome-linked-list/description/"
+        target="_blank"
+        >Linked List Cycle - LeetCode</a
+      >
+    </h1>
+    <script>
+      var isPalindrome = function (head) {
+        // Approach 1 - convert into array and then check isPalindrome
+        /*  let curr = head;
+        let linkedListArr = [];
+
+        while (curr) {
+          linkedListArr.push(curr.val);
+          curr = curr.next;
+        }
+        let start = 0;
+        let end = linkedListArr.length - 1;
+
+        while (start < end) {
+          if (linkedListArr[start] === linkedListArr[end]) {
+            start++;
+            end--;
+          } else {
+            return false;
+          }
+        }
+        return true; */
+        // Approach 2
+        // Find Middle first
+
+        let slow = head;
+        let fast = head;
+
+        while (fast && fast.next) {
+          slow = slow.next;
+          fast = fast.next.next;
+        }
+
+        // Reverse the second half from middle to end
+
+        let prev = null;
+        let curr = slow;
+
+        while (curr) {
+          let temp = curr.next;
+          curr.next = prev;
+          prev = curr;
+          curr = temp;
+        }
+
+        // Check through two halfs first and second half if palindrom or not
+        let firstList = head;
+        let secondList = prev;
+
+        while (secondList) {
+          if (firstList.val !== secondList.val) {
+            return false;
+          } else {
+            firstList = firstList.next;
+            secondList = secondList.next;
+          }
+        }
+        return true;
+      };
+    </script>
+  </body>
+</html>

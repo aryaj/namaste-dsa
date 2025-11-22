@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicates from Sorted List</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/"
+        target="_blank"
+        >Remove Duplicates from Sorted List - LeetCode</a
+      >
+    </h1>
+    <script>
+      var deleteDuplicates = function (head) {
+        let curr = head;
+        while (curr && curr.next) {
+          if (curr.val === curr.next.val) {
+            curr.next = curr.next.next;
+          } else {
+            curr = curr.next;
+          }
+        }
+        return head;
+      };
+    </script>
+  </body>
+</html>

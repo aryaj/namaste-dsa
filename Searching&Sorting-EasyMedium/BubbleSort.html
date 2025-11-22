@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a href="" target="_blank">Bubble Sort - LeetCode</a>
+    </h1>
+    <script>
+      function main(arr) {
+        let n = arr.length - 1;
+        for (let i = 0; i < n; i++) {
+          let isSwapped = false;
+          console.log("hello");
+          for (let j = 0; j < n - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+              isSwapped = true;
+            }
+          }
+          if (!isSwapped) {
+            break;
+          }
+        }
+        return arr;
+      }
+
+      //let arr = [5, 4, 9, 1, 0];
+      let arr = [1, 2, 3, 4];
+
+      console.log(main(arr));
+    </script>
+  </body>
+</html>

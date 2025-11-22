@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/merge-sorted-array/"
+        target="_blank"
+        >Merge Sort - LeetCode</a
+      >
+    </h1>
+    <script>
+      function mergeSort(arr) {
+        function merge(leftArr, rightArr) {
+          let res = [];
+          let i = 0;
+          let j = 0;
+
+          while (i < leftArr.length && j < rightArr.length) {
+            if (leftArr[i] < rightArr[j]) {
+              res.push(leftArr[i]);
+              i++;
+            } else {
+              res.push(rightArr[j]);
+              j++;
+            }
+          }
+          return [...res, ...leftArr.slice(i), ...rightArr.slice(j)];
+        }
+
+        if (arr.length <= 1) {
+          return arr;
+        }
+
+        let mid = Math.floor(arr.length / 2);
+
+        let left = mergeSort(arr.slice(0, mid));
+        let right = mergeSort(arr.slice(mid));
+
+        return merge(left, right);
+      }
+      let arr = [8, 4, 5, 6, 9, 1, 3, 6];
+      console.log(mergeSort(arr));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add two linked lists Linked List</title>
+  </head>
+  <body>
+    <h1>
+      <a href="https://leetcode.com/problems/add-two-numbers/" target="_blank"
+        >Add two linked lists Linked List - LeetCode</a
+      >
+    </h1>
+    <script>
+      var addTwoNumbers = function (l1, l2) {
+        let num = 0;
+        let carry = 0;
+        let result = new ListNode();
+        let resultHead = result;
+        let l1Curr = l1;
+        let l2Curr = l2;
+
+        while (l1Curr || l2Curr || carry) {
+          let sum =
+            (l1Curr ? l1Curr.val : 0) + (l2Curr ? l2Curr.val : 0) + carry;
+          let val = 0;
+          digit = sum % 10;
+          carry = Math.floor(sum / 10);
+
+          let newNode = new ListNode(digit);
+          result.next = newNode;
+          result = result.next;
+
+          l1Curr = l1Curr && l1Curr.next;
+          l2Curr = l2Curr && l2Curr.next;
+        }
+        return resultHead.next;
+      };
+    </script>
+  </body>
+</html>

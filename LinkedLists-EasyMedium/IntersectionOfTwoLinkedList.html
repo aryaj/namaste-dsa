@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection of Two Linked List</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        href="https://leetcode.com/problems/linked-list-cycle/description/"
+        target="_blank"
+        >Intersection of two linked lists - LeetCode</a
+      >
+    </h1>
+    <script>
+      var getIntersectionNode = function (headA, headB) {
+        // Put all nodes of headA inside a set
+        let headASet = new Set();
+
+        let headACurr = headA;
+        while (headACurr) {
+          headASet.add(headACurr.val);
+          headACurr = headACurr.next;
+        }
+
+        let headBCurr = headB;
+        // Check for all the nodes of headB inside the set if present of not
+        while (headBCurr) {
+          if (headASet.has(headBCurr.val)) {
+            return true;
+          }
+          headBCurr = headBCurr.next;
+        }
+
+        return false;
+      };
+    </script>
+  </body>
+</html>
